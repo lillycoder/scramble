@@ -1,1 +1,13 @@
 <h1>grams1</h1>
+
+<% @gram.each do |gram| %>
+  <div>
+    <%= gram.message %>
+    <% if gram.picture.present? == false%>
+        <p>YThere is no picture</p>
+      <% else %>
+        <%= image_tag(gram.picture.url) %>
+    <% end %>
+  </div>
+<% end %>
+
