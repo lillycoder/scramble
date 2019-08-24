@@ -3,11 +3,12 @@
 <% @gram.each do |gram| %>
   <div>
     <%= gram.message %>
-    <% if gram.picture.present? == false%>
-        <p>YThere is no picture</p>
-      <% else %>
-        <%= image_tag(gram.picture.url) %>
+    <% if gram.picture.present? %>
+      <%= image_tag(gram.picture.url) %>
+    <% else %>
+      <p>there is no picture</p>
     <% end %>
   </div>
 <% end %>
 
+<%= link_to "add a new gram", new_gram_path %>
